@@ -12,21 +12,7 @@ Drop-in voice packs that modify the AI's personality, speech patterns, and tone.
 pi install https://github.com/shopify-playground/pi-persona
 ```
 
-<details>
-<summary>Manual install</summary>
-
-```bash
-# Clone
-git clone https://github.com/shopify-playground/pi-persona.git \
-  ~/.pi/agent/git/github.com/shopify-playground/pi-persona
-
-# Symlink extension
-ln -sf ~/.pi/agent/git/github.com/shopify-playground/pi-persona \
-  ~/.pi/agent/extensions/persona
-```
-
 Then `/reload` in pi.
-</details>
 
 ---
 
