@@ -92,22 +92,22 @@ Persisted to `~/.pi/agent/persona/settings.json`:
 ```json
 {
   "name": "Leo",
-  "defaultVoice": "friday"
+  "voice": "friday"
 }
 ```
 
 | Field | Description | Default |
 |-------|-------------|---------|
 | `name` | How the AI addresses the user | `"User"` |
-| `defaultVoice` | Voice used when no session override exists | `"friday"` |
+| `voice` | Active voice | `"friday"` |
 
-Edit the file directly or use `/persona name` and `/persona default`.
+Edit the file directly or use `/persona`.
 
 ---
 
 ## How it works
 
-The extension uses pi's `before_agent_start` event to append the active voice content to the system prompt each turn. Voice switches within a session are stored via `appendEntry` (session-scoped). The default voice and user name are read from `settings.json` (global, survives across sessions).
+The extension reads `settings.json` on every prompt turn and appends the active voice to the system prompt via `before_agent_start`. Every change writes directly to `settings.json` and takes effect immediately.
 
 The footer status bar shows the active voice and user name at all times.
 
