@@ -177,7 +177,9 @@ export default function persona(pi: ExtensionAPI) {
 	});
 
 	// Inject active voice + user name into system prompt
+	// Re-read settings every turn so manual edits to settings.json take effect immediately
 	pi.on("before_agent_start", async (event) => {
+		settings = loadSettings();
 		const voice = voices.get(activeVoice);
 		if (!voice) return;
 
