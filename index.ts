@@ -127,7 +127,6 @@ export default function persona(pi: ExtensionAPI) {
 	});
 
 	pi.on("before_agent_start", async (event) => {
-		settings = loadSettings();
 		const voice = voices.get(settings.voice);
 		if (!voice) return;
 
