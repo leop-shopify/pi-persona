@@ -107,7 +107,7 @@ Edit the file directly or use `/persona`.
 
 ## How it works
 
-The extension reads `settings.json` on every prompt turn and appends the active voice to the system prompt via `before_agent_start`. Every change writes directly to `settings.json` and takes effect immediately.
+The extension loads `settings.json` at session start and keeps it in memory. The `/persona` command writes changes to both memory and disk. The active voice is appended to the system prompt via `before_agent_start` each turn.
 
 The footer status bar shows the active voice and user name at all times.
 
