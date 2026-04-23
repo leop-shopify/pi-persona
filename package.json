@@ -1,0 +1,9 @@
+{
+  "name": "pi-persona",
+  "version": "1.0.0",
+  "description": "Switchable AI voice packs for pi",
+  "keywords": ["pi-package"],
+  "pi": {
+    "extensions": ["index.ts"]
+  }
+}
