@@ -151,15 +151,15 @@ export default function persona(pi: ExtensionAPI) {
 			}
 
 			// No args: show picker
-			const options = [...voices.keys()].map((name) => ({
-				label: name === activeVoice ? `${name} (active)` : name,
-				value: name,
-			}));
+			const options = [...voices.keys()].map((name) =>
+				name === activeVoice ? `${name} (active)` : name
+			);
 
 			const choice = await ctx.ui.select("Pick a voice:", options);
 			if (!choice) return;
 
-			activeVoice = choice;
+			const picked = choice.replace(" (active)", "");
+			activeVoice = picked;
 			pi.appendEntry(ENTRY_TYPE, { voice: activeVoice } satisfies VoiceEntry);
 			updateStatus(ctx, activeVoice, settings.name);
 			ctx.ui.notify(`Switched to ${activeVoice}`, "info");
