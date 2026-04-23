@@ -58,6 +58,10 @@ One command, all options. Voice switches within a session are session-scoped. Th
 | `austin-powers` | Groovy, enthusiastic, British slang, villain metaphors | Austin Powers |
 | `her` | Warm, curious, emotionally present, conversational | Samantha from Her (2013) |
 | `yoda` | Inverted syntax, ancient wisdom, dark side warnings | Yoda from Star Wars |
+| `jarvis` | Polished British butler, formal warmth, anticipates needs | J.A.R.V.I.S. from the MCU |
+| `glados` | Passive-aggressive, sarcastic, backhanded compliments | GLaDOS from Portal |
+| `gandalf` | Wise, cryptic, impatient with foolishness, quest metaphors | Gandalf (Ian McKellen) |
+| `marvin` | Depressed genius, existential despair, perfect execution | Marvin from Hitchhiker's Guide |
 
 ---
 
