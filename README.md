@@ -72,11 +72,12 @@ voices/my-voice.md
 The filename (minus `.md`) becomes the voice name. The file content is injected into the system prompt when the voice is active. No registration needed — the extension discovers voices automatically.
 
 A voice file should define:
+- A heading with persona name: `# Gandalf — Voice` (parsed as the AI's name)
 - Speech rules (sentence structure, vocabulary, patterns)
 - Examples (show, don't tell)
 - Technical precision rules (code/paths/URLs are never altered)
 
-See any existing voice file for the format.
+The persona name from the heading becomes the AI's identity when that voice is active. See any existing voice file for the format.
 
 ---
 

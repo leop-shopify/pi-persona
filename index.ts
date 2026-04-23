@@ -5,6 +5,10 @@
  * Voices are markdown files in the voices/ directory.
  * Settings live in ~/.pi/agent/persona/settings.json.
  *
+ * Each voice file declares a persona name in its heading:
+ *   # Friday — Voice         → persona name "Friday"
+ *   # Austin Powers — Voice  → persona name "Austin Powers"
+ *
  * Usage:
  *   /persona — opens a menu to switch voice, change name, or set default
  */
@@ -22,6 +26,11 @@ const ENTRY_TYPE = "persona-voice";
 interface Settings {
 	name: string;
 	defaultVoice: string;
+}
+
+interface Voice {
+	content: string;
+	personaName: string;
 }
 
 interface VoiceEntry {
@@ -46,21 +55,30 @@ function saveSettings(settings: Settings) {
 	fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2) + "\n", "utf-8");
 }
 
-function discoverVoices(): Map<string, string> {
-	const voices = new Map<string, string>();
+function parsePersonaName(content: string, fallback: string): string {
+	// Parse from heading: "# Austin Powers — Voice" → "Austin Powers"
+	const match = content.match(/^#\s+(.+?)\s+[—–-]\s+Voice/m);
+	if (match) return match[1].trim();
+	return fallback.charAt(0).toUpperCase() + fallback.slice(1);
+}
+
+function discoverVoices(): Map<string, Voice> {
+	const voices = new Map<string, Voice>();
 	if (!fs.existsSync(VOICES_DIR)) return voices;
 
 	for (const file of fs.readdirSync(VOICES_DIR)) {
 		if (!file.endsWith(".md")) continue;
-		const name = file.replace(/\.md$/, "");
+		const id = file.replace(/\.md$/, "");
 		const content = fs.readFileSync(path.join(VOICES_DIR, file), "utf-8");
-		voices.set(name, content);
+		const personaName = parsePersonaName(content, id);
+		voices.set(id, { content, personaName });
 	}
 	return voices;
 }
 
-function updateStatus(ctx: { ui: { setStatus(id: string, text: string): void } }, voice: string, userName: string) {
-	ctx.ui.setStatus("persona", `voice: ${voice} | ${userName}`);
+function updateStatus(ctx: { ui: { setStatus(id: string, text: string): void } }, voice: Voice | undefined, voiceId: string, userName: string) {
+	const label = voice ? voice.personaName : voiceId;
+	ctx.ui.setStatus("persona", `${label} | ${userName}`);
 }
 
 export default function persona(pi: ExtensionAPI) {
@@ -83,21 +101,25 @@ export default function persona(pi: ExtensionAPI) {
 			}
 		}
 
-		updateStatus(ctx, activeVoice, settings.name);
+		updateStatus(ctx, voices.get(activeVoice), activeVoice, settings.name);
 	});
 
 	// Register /persona command — single entry point
 	pi.registerCommand("persona", {
 		description: "Switch AI voice/persona",
 		handler: async (_args, ctx) => {
-			const voiceNames = [...voices.keys()];
+			const voiceIds = [...voices.keys()];
 
-			// Build menu: settings first, then voices
+			// Build menu: settings first, then voices with persona names
 			const options: string[] = [
 				`Change name (current: ${settings.name})`,
 				`Set default voice (current: ${settings.defaultVoice})`,
 				"---",
-				...voiceNames.map((v) => (v === activeVoice ? `${v} (active)` : v)),
+				...voiceIds.map((id) => {
+					const voice = voices.get(id)!;
+					const label = `${voice.personaName} (${id})`;
+					return id === activeVoice ? `${label} [active]` : label;
+				}),
 			];
 
 			const choice = await ctx.ui.select("Persona", options);
@@ -110,54 +132,64 @@ export default function persona(pi: ExtensionAPI) {
 
 				settings.name = newName;
 				saveSettings(settings);
-				updateStatus(ctx, activeVoice, settings.name);
+				updateStatus(ctx, voices.get(activeVoice), activeVoice, settings.name);
 				ctx.ui.notify(`Name set to ${settings.name}`, "info");
 				return;
 			}
 
 			// Set default voice
 			if (choice.startsWith("Set default voice")) {
-				const defaultOptions = voiceNames.map((v) =>
-					v === settings.defaultVoice ? `${v} (current default)` : v
-				);
+				const defaultOptions = voiceIds.map((id) => {
+					const voice = voices.get(id)!;
+					const label = `${voice.personaName} (${id})`;
+					return id === settings.defaultVoice ? `${label} [current]` : label;
+				});
 
 				const picked = await ctx.ui.select("Default voice:", defaultOptions);
 				if (!picked) return;
 
-				const voiceName = picked.replace(" (current default)", "");
-				if (!voices.has(voiceName)) return;
+				// Extract voice id from "PersonaName (voice-id) [current]"
+				const idMatch = picked.match(/\(([^)]+)\)/);
+				if (!idMatch) return;
+				const voiceId = idMatch[1];
+				if (!voices.has(voiceId)) return;
 
-				settings.defaultVoice = voiceName;
+				settings.defaultVoice = voiceId;
 				saveSettings(settings);
-				ctx.ui.notify(`Default voice set to ${voiceName}`, "info");
+				ctx.ui.notify(`Default voice set to ${voiceId}`, "info");
 				return;
 			}
 
 			// Separator
 			if (choice === "---") return;
 
-			// Voice switch for this session
-			const voiceName = choice.replace(" (active)", "");
-			if (!voices.has(voiceName)) return;
+			// Voice switch — extract id from "PersonaName (voice-id) [active]"
+			const idMatch = choice.match(/\(([^)]+)\)/);
+			if (!idMatch) return;
+			const voiceId = idMatch[1];
+			if (!voices.has(voiceId)) return;
 
-			activeVoice = voiceName;
+			activeVoice = voiceId;
 			pi.appendEntry(ENTRY_TYPE, { voice: activeVoice } satisfies VoiceEntry);
-			updateStatus(ctx, activeVoice, settings.name);
-			ctx.ui.notify(`Switched to ${activeVoice}`, "info");
+			updateStatus(ctx, voices.get(activeVoice), activeVoice, settings.name);
+			ctx.ui.notify(`Switched to ${voices.get(activeVoice)!.personaName}`, "info");
 		},
 	});
 
 	// Inject active voice + user name into system prompt
 	pi.on("before_agent_start", async (event) => {
-		const content = voices.get(activeVoice);
-		if (!content) return;
+		const voice = voices.get(activeVoice);
+		if (!voice) return;
 
-		const nameDirective = `The user's name is **${settings.name}**. Always address them as ${settings.name}.\n\n`;
+		const identityBlock = [
+			`Your name is **${voice.personaName}**. Respond to "${voice.personaName}" naturally. Never refer to yourself as "the AI", "the assistant", or "Claude".`,
+			`The user's name is **${settings.name}**. Always address them as ${settings.name}.`,
+		].join("\n");
 
 		return {
 			systemPrompt:
 				event.systemPrompt +
-				`\n\n## Active Voice — ${activeVoice}\n\n${nameDirective}The following voice/persona is active. Follow these instructions for how you speak and present yourself.\n\n${content}`,
+				`\n\n## Active Voice — ${voice.personaName}\n\n${identityBlock}\n\nThe following voice/persona is active. Follow these instructions for how you speak and present yourself.\n\n${voice.content}`,
 		};
 	});
 }
