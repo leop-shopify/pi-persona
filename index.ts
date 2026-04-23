@@ -6,12 +6,7 @@
  * Settings live in ~/.pi/agent/persona/settings.json.
  *
  * Usage:
- *   /persona              — pick a voice from a list
- *   /persona rocky        — switch directly to a voice
- *   /persona name Leo     — set user name (persisted to settings.json)
- *   /persona name         — show current name
- *   /persona default hal  — set default voice (persisted to settings.json)
- *   /persona default      — show current default
+ *   /persona — opens a menu to switch voice, change name, or set default
  */
 
 import * as fs from "node:fs";
@@ -91,20 +86,27 @@ export default function persona(pi: ExtensionAPI) {
 		updateStatus(ctx, activeVoice, settings.name);
 	});
 
-	// Register /persona command
+	// Register /persona command — single entry point
 	pi.registerCommand("persona", {
-		description: "Switch AI voice/persona, or configure name/defaults",
-		handler: async (args, ctx) => {
-			const trimmed = args?.trim() ?? "";
+		description: "Switch AI voice/persona",
+		handler: async (_args, ctx) => {
+			const voiceNames = [...voices.keys()];
 
-			// Subcommand: /persona name [value]
-			if (trimmed === "name" || trimmed.startsWith("name ")) {
-				const newName = trimmed.slice(5).trim();
+			// Build menu: settings first, then voices
+			const options: string[] = [
+				`Change name (current: ${settings.name})`,
+				`Set default voice (current: ${settings.defaultVoice})`,
+				"---",
+				...voiceNames.map((v) => (v === activeVoice ? `${v} (active)` : v)),
+			];
 
-				if (!newName) {
-					ctx.ui.notify(`Current name: ${settings.name}`, "info");
-					return;
-				}
+			const choice = await ctx.ui.select("Persona", options);
+			if (!choice) return;
+
+			// Change name
+			if (choice.startsWith("Change name")) {
+				const newName = await ctx.ui.input("Name:", settings.name);
+				if (!newName) return;
 
 				settings.name = newName;
 				saveSettings(settings);
@@ -113,53 +115,32 @@ export default function persona(pi: ExtensionAPI) {
 				return;
 			}
 
-			// Subcommand: /persona default [voice]
-			if (trimmed === "default" || trimmed.startsWith("default ")) {
-				const newDefault = trimmed.slice(8).trim();
+			// Set default voice
+			if (choice.startsWith("Set default voice")) {
+				const defaultOptions = voiceNames.map((v) =>
+					v === settings.defaultVoice ? `${v} (current default)` : v
+				);
 
-				if (!newDefault) {
-					ctx.ui.notify(`Default voice: ${settings.defaultVoice}`, "info");
-					return;
-				}
+				const picked = await ctx.ui.select("Default voice:", defaultOptions);
+				if (!picked) return;
 
-				if (!voices.has(newDefault)) {
-					const available = [...voices.keys()].join(", ");
-					ctx.ui.notify(`Unknown voice "${newDefault}". Available: ${available}`, "error");
-					return;
-				}
+				const voiceName = picked.replace(" (current default)", "");
+				if (!voices.has(voiceName)) return;
 
-				settings.defaultVoice = newDefault;
+				settings.defaultVoice = voiceName;
 				saveSettings(settings);
-				ctx.ui.notify(`Default voice set to ${settings.defaultVoice}`, "info");
+				ctx.ui.notify(`Default voice set to ${voiceName}`, "info");
 				return;
 			}
 
-			// Direct switch: /persona rocky
-			if (trimmed && voices.has(trimmed)) {
-				activeVoice = trimmed;
-				pi.appendEntry(ENTRY_TYPE, { voice: activeVoice } satisfies VoiceEntry);
-				updateStatus(ctx, activeVoice, settings.name);
-				ctx.ui.notify(`Switched to ${activeVoice}`, "info");
-				return;
-			}
+			// Separator
+			if (choice === "---") return;
 
-			// Unknown name passed
-			if (trimmed) {
-				const available = [...voices.keys()].join(", ");
-				ctx.ui.notify(`Unknown voice "${trimmed}". Available: ${available}`, "error");
-				return;
-			}
+			// Voice switch for this session
+			const voiceName = choice.replace(" (active)", "");
+			if (!voices.has(voiceName)) return;
 
-			// No args: show picker
-			const options = [...voices.keys()].map((name) =>
-				name === activeVoice ? `${name} (active)` : name
-			);
-
-			const choice = await ctx.ui.select("Pick a voice:", options);
-			if (!choice) return;
-
-			const picked = choice.replace(" (active)", "");
-			activeVoice = picked;
+			activeVoice = voiceName;
 			pi.appendEntry(ENTRY_TYPE, { voice: activeVoice } satisfies VoiceEntry);
 			updateStatus(ctx, activeVoice, settings.name);
 			ctx.ui.notify(`Switched to ${activeVoice}`, "info");

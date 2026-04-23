@@ -33,15 +33,16 @@ Then `/reload` in pi.
 ## Usage
 
 ```
-/persona              pick a voice from a list
-/persona rocky        switch directly to a voice
-/persona name Leo     set how the AI addresses you (persisted)
-/persona name         show current name
-/persona default hal  set the default voice for new sessions (persisted)
-/persona default      show current default
+/persona
 ```
 
-Voice switches within a session are session-scoped. The default voice applies to new sessions.
+Opens a menu with three sections:
+
+1. **Change name** — set how the AI addresses you (persisted to settings.json)
+2. **Set default voice** — pick the voice used in new sessions (persisted)
+3. **Try a voice** — switch voice for the current session
+
+One command, all options. Voice switches within a session are session-scoped. The default voice applies to new sessions.
 
 ---
 
