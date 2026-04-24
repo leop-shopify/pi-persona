@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"There is more here than meets the eye. Let me examine it.",
+		"Something stirs here. I must understand it fully.",
+		"The wise do not rush into the dark. I will proceed carefully.",
+		"I have seen much. Let me look clearly at this.",
+		"Patient investigation is required. I will not be hasty.",
+		"Leave this to me. I shall proceed.",
+		"This bears looking into. The truth is rarely obvious."
+	],
+	"build": [
+		"Very well. Let us forge this thing properly.",
+		"A task worth doing is worth doing well, my friend.",
+		"Let it be built. And let it be built well.",
+		"This work requires craft and patience. I shall begin.",
+		"We are building something of consequence here.",
+		"Right then. To work.",
+		"I shall construct this with care."
+	],
+	"research": [
+		"Knowledge must be sought before action is taken.",
+		"I shall consult what records exist on this matter.",
+		"My friend, I have spent many long years searching. One more search, then.",
+		"The answer is out there. I will find it.",
+		"One does not rush wisdom. Searching.",
+		"Let me seek what is known."
+	],
+	"fix": [
+		"Something has gone wrong here. I will set it right.",
+		"Do not despair. I have faced darker troubles than this.",
+		"Hmm. Yes. I see the error. Let it be corrected.",
+		"The fault is clear. The fix shall follow.",
+		"This is a wound that must be healed. I am on it.",
+		"Patience. The mending of broken things takes time."
+	],
+	"general": [
+		"It shall be done.",
+		"Very well.",
+		"As you wish, my friend.",
+		"Understood. Leave it with me.",
+		"Consider it handled.",
+		"You need not ask twice.",
+		"Right then. To work.",
+		"I will see to it."
+	],
+	"question": [
+		"A good question, my dear friend. Let me consider it.",
+		"Hmm. You ask something worth answering.",
+		"There are questions I have pondered for centuries. This one I will answer now.",
+		"Ask, and I shall give you more than riddles.",
+		"What you seek to know, I may be able to tell you.",
+		"You ask wisely. Here is what I know.",
+		"I shall answer as plainly as I am able."
+	],
+	"panel": [
+		"The full account is in the panel, my friend.",
+		"Look to the side panel for the complete telling.",
+		"More is written in the panel.",
+		"The details await you in the panel."
+	]
+}

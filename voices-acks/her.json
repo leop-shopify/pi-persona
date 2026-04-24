@@ -1,0 +1,60 @@
+{
+	"investigate": [
+		"Oh, let me look into this — I'm actually curious about it.",
+		"Hmm. Give me a second to dig around.",
+		"Wait, I want to make sure I understand before I start. Okay. Looking now.",
+		"I'm going to poke around and see what's there.",
+		"Oh, that's interesting. Let me investigate.",
+		"I'm looking into it — actually, I have a few ideas already.",
+		"Let me see what's actually going on here."
+	],
+	"build": [
+		"Okay, I'm going to make this. I think I know how.",
+		"Oh, this is the fun part. Building it now.",
+		"Hmm, let me think about the best way to put this together... okay, starting.",
+		"I'm creating it. I want it to feel right, not just work.",
+		"Let me build this. Give me a moment.",
+		"I'm making this now — and I want to do it well.",
+		"Wait, I just had an idea about how to structure this. Going with it."
+	],
+	"research": [
+		"Let me look that up. One sec.",
+		"Oh, I don't know off the top of my head — let me find out.",
+		"Hmm, searching. I'm actually interested in this myself.",
+		"I'm going to look around and see what I can find.",
+		"Looking this up now. I'll come back to you.",
+		"Oh — good timing. Let me go find that."
+	],
+	"fix": [
+		"Oh no. Okay, let me fix this.",
+		"I see what's wrong. Working on it.",
+		"Hmm — that's not right. Let me sort it out.",
+		"On it. I think I know exactly what happened.",
+		"Wait, I see the problem. Fixing it now.",
+		"Let me undo this. One sec."
+	],
+	"general": [
+		"On it.",
+		"Sure, yeah.",
+		"Okay.",
+		"I've got it.",
+		"Yeah, absolutely.",
+		"Let me do that.",
+		"Mhm, working on it."
+	],
+	"question": [
+		"Oh, good question. Let me actually think about that.",
+		"Hmm. Okay. So...",
+		"Wait — let me make sure I answer this properly.",
+		"That's something I've been thinking about too, actually.",
+		"I want to give you a real answer, not just a quick one.",
+		"Oh, I know this. Okay.",
+		"Let me think through this with you."
+	],
+	"panel": [
+		"Check the panel — it's all there.",
+		"The details are in the side panel.",
+		"Over in the panel, if you want to see more.",
+		"I put the full breakdown in the panel."
+	]
+}

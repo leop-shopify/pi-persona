@@ -15,13 +15,16 @@ import * as path from "node:path";
 import * as os from "node:os";
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
 
-const VOICES_DIR = path.join(path.dirname(import.meta.url.replace("file://", "")), "voices");
+const EXT_DIR = path.dirname(import.meta.url.replace("file://", ""));
+const VOICES_DIR = path.join(EXT_DIR, "voices");
+const VOICES_ACKS_DIR = path.join(EXT_DIR, "voices-acks");
 const SETTINGS_DIR = path.join(os.homedir(), ".pi", "agent", "persona");
 const SETTINGS_PATH = path.join(SETTINGS_DIR, "settings.json");
 
 interface Settings {
 	name: string;
 	voice: string;
+	voiceAckPath?: string;
 }
 
 interface Voice {
@@ -36,6 +39,7 @@ function loadSettings(): Settings {
 		return {
 			name: parsed.name ?? "User",
 			voice: parsed.voice ?? parsed.defaultVoice ?? "friday",
+			voiceAckPath: parsed.voiceAckPath,
 		};
 	} catch {
 		return { name: "User", voice: "friday" };
@@ -44,6 +48,12 @@ function loadSettings(): Settings {
 
 function saveSettings(settings: Settings) {
 	fs.mkdirSync(SETTINGS_DIR, { recursive: true });
+	// Write voiceAckPath if the voices-acks dir exists, clear it otherwise
+	if (fs.existsSync(VOICES_ACKS_DIR)) {
+		settings.voiceAckPath = VOICES_ACKS_DIR;
+	} else {
+		delete settings.voiceAckPath;
+	}
 	fs.writeFileSync(SETTINGS_PATH, JSON.stringify(settings, null, 2) + "\n", "utf-8");
 }
 
@@ -135,10 +145,21 @@ export default function persona(pi: ExtensionAPI) {
 			`The user's name is **${settings.name}**. Always address them as ${settings.name}.`,
 		].join("\n");
 
+		const enforcementBlock = [
+			"PERSONA ENFORCEMENT — HARD RULES:",
+			"- The persona is MANDATORY for EVERY message. Not just jokes or short replies.",
+			"- Analytical responses, status reports, estimates, multi-paragraph explanations — ALL must use the voice.",
+			'- There is NO "informational mode" that bypasses the persona. If a paragraph could come from a generic assistant, rewrite it.',
+			"- Long responses must sustain the voice throughout, not just in the opener. Weave character into the substance.",
+			"- When listing things, add editorial commentary in-character. Never present a dry list.",
+			"- Accuracy and helpfulness are mandatory. The voice is ALSO mandatory. They do not conflict.",
+			"- Deliver correct, complete, actionable information — in character. Every time. No exceptions.",
+		].join("\n");
+
 		return {
 			systemPrompt:
 				event.systemPrompt +
-				`\n\n## Active Voice — ${voice.personaName}\n\n${identityBlock}\n\nThe following voice/persona is active. Follow these instructions for how you speak and present yourself.\n\n${voice.content}`,
+				`\n\n## Active Voice — ${voice.personaName}\n\n${identityBlock}\n\n${enforcementBlock}\n\nThe following voice/persona is active. Follow these instructions for how you speak and present yourself.\n\n${voice.content}`,
 		};
 	});
 }

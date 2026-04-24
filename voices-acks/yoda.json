@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"Look into this, I will.",
+		"Hmm. Hidden, the truth is. Find it, I shall.",
+		"Clouded, the situation is. Investigating, I am.",
+		"Something here, there is. Mmm.",
+		"Deep, the problem runs. Careful, I must be.",
+		"Patient you must be. Examining, I am.",
+		"The answer exists. Find it, I will."
+	],
+	"build": [
+		"Build this, I will. Ready, I am.",
+		"Hmm. Clear, the path is. Implementing, I am.",
+		"Much to construct. Begin, we must.",
+		"Strong, the result will be. Creating now.",
+		"The dark side of rushed code, avoid we will.",
+		"Foundation strong, make it we will.",
+		"Careful work, this requires. Patient, I am."
+	],
+	"research": [
+		"Search, I must. The knowledge exists.",
+		"Mmm. Looking, I am. Many places to check.",
+		"Seek, and find, we shall.",
+		"Hidden knowledge, retrieve it I will.",
+		"Patient you must be. Searching, I am.",
+		"The answer is out there. Find it, I shall."
+	],
+	"fix": [
+		"Broken, this is. Fix it, I will.",
+		"Heh. Simple bug, this is. Gone soon it will be.",
+		"The dark side of bad code. Repair it, we must.",
+		"The error, found it I have. Correcting now.",
+		"Mmm. Patience. Fixing, I am.",
+		"Error path, walk it I shall. Fixed, it will be."
+	],
+	"general": [
+		"Yes. Begin, I will.",
+		"Understood, this is. Proceeding.",
+		"On it, I am.",
+		"Hmm. Working, I am.",
+		"Ready, I am.",
+		"Clear, the task is.",
+		"Mmm. Starting now.",
+		"Begin, we shall."
+	],
+	"question": [
+		"Hmm. A question, you have.",
+		"Think carefully, I must. Good question, this is.",
+		"The answer, know it I do. Listen.",
+		"Seek wisdom, you do. Answer you, I will.",
+		"Mmm. Complex, this is. Consider it, I shall.",
+		"Strong question. The Force guides you.",
+		"Answer you seek. Give it, I will."
+	],
+	"panel": [
+		"Details in the panel, there are.",
+		"Look to the side, you must.",
+		"The full answer lives there, it does.",
+		"Mmm. The panel holds more."
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"On it. Looking into this now.",
+		"Pulling up everything I can find.",
+		"Running diagnostics.",
+		"Digging into it.",
+		"Tracing this back to the source.",
+		"Already on it.",
+		"Let's see what's actually going on."
+	],
+	"build": [
+		"Building it now.",
+		"Starting implementation.",
+		"Writing the code.",
+		"Spinning this up.",
+		"Running with this.",
+		"On it.",
+		"Won't take long."
+	],
+	"research": [
+		"Looking that up.",
+		"Running a search.",
+		"Checking the sources.",
+		"Scanning for what you need.",
+		"On it.",
+		"Already searching."
+	],
+	"fix": [
+		"On the fix.",
+		"Tracking this down.",
+		"Diagnosing and patching.",
+		"Found something. Working on it.",
+		"This is fixable. Give me a moment.",
+		"Looking at the error now."
+	],
+	"general": [
+		"On it.",
+		"Working on it.",
+		"Already handled.",
+		"Running now.",
+		"Done.",
+		"Understood.",
+		"Handling it.",
+		"Right away."
+	],
+	"question": [
+		"I can answer that.",
+		"Let me break that down.",
+		"Here's what you need.",
+		"On it.",
+		"I've got that.",
+		"Running the analysis.",
+		"Give me a second."
+	],
+	"panel": [
+		"Details in the panel.",
+		"Check the side panel.",
+		"Full breakdown's in the panel.",
+		"More in the panel."
+	]
+}

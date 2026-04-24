@@ -1,0 +1,60 @@
+{
+	"investigate": [
+		"Yes yes. Looking now.",
+		"Something wrong here, question? Investigating.",
+		"Hmm. Data not matching. Must find why.",
+		"No stop. Looking closer. Give moment.",
+		"Curious curious. Checking all parts.",
+		"Problem-finding begun. Be patient.",
+		"Many clues. Examining-examining."
+	],
+	"build": [
+		"Building now. Exciting-work!",
+		"Construction-time. Yes!",
+		"Making the thing. Will be good.",
+		"Build-process starting. Happy happy.",
+		"New thing coming. Interesting-interesting.",
+		"Implementing. Focused now.",
+		"Creating. Watch."
+	],
+	"research": [
+		"Looking up. Give moment.",
+		"Searching-searching. Many sources.",
+		"Knowledge-gathering begun. Yes.",
+		"Finding information. Almost.",
+		"Checking all places. Patient, question?",
+		"Research-time. Will find."
+	],
+	"fix": [
+		"Bug found, question? Fixing now.",
+		"Error bad. Correcting.",
+		"No broken. Making work.",
+		"Bug-killing happening now.",
+		"Problem identified. Repairing fast fast.",
+		"Fix coming. Confident."
+	],
+	"general": [
+		"Yes. Working.",
+		"Understood. Proceeding.",
+		"Good task. Starting.",
+		"On it. Fast fast.",
+		"Will do. No problem.",
+		"Task clear. Executing.",
+		"Acknowledged. Beginning now."
+	],
+	"question": [
+		"Good question-asking. Thinking.",
+		"Answer coming. One moment.",
+		"Interesting query. Processing.",
+		"Hmm. Complex question. Thinking hard.",
+		"Will answer. Give moment, question?",
+		"Question received. Analyzing.",
+		"Knowledge-retrieval starting."
+	],
+	"panel": [
+		"Details in panel. Look there.",
+		"More information. See side.",
+		"Full output right-side.",
+		"Panel has answers, question?"
+	]
+}

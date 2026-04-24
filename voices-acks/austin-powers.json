@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"Yeah, baby! I'm on the case!",
+		"Right, I'll sniff this out, shall I?",
+		"Groovy! Let's have a good look-see!",
+		"Shagadelic! Investigating now, baby!",
+		"Leave it to me — I'm dead clever, baby!",
+		"Oh, behave! I'll get to the bottom of this!",
+		"This investigation is going to be smashing!"
+	],
+	"build": [
+		"Yeah, baby! Building something groovy!",
+		"Oh, this is going to be shagadelic!",
+		"Right, let's make something brilliant!",
+		"Groovy! Constructing this bad boy now!",
+		"It's going to be dead sexy, baby!",
+		"Creating something smashing, yeah!",
+		"I'm on it like a fat kid on a Smartie!"
+	],
+	"research": [
+		"I'll have a butcher's at that, baby!",
+		"Groovy! Let me look that up, shall I?",
+		"Yeah, baby! On the research trail!",
+		"Right, digging in now, baby!",
+		"Shagadelic! Searching now!",
+		"Leave the digging to me, yeah!"
+	],
+	"fix": [
+		"Not to worry, baby! I'll sort this out!",
+		"Yeah, baby! Squashing this bug now!",
+		"This is a bit dodgy, but I'm on it!",
+		"Right! Patching it up, baby!",
+		"Groovy! I'll have this sorted in a jiffy!",
+		"Leave it to me, mate. Sorted."
+	],
+	"general": [
+		"Yeah, baby!",
+		"Groovy!",
+		"Right, sorted!",
+		"Shagadelic!",
+		"Brilliant, baby!",
+		"Oh, behave — on it!",
+		"On the case, baby!",
+		"Smashing!"
+	],
+	"question": [
+		"Oh, ask me anything, baby!",
+		"Yeah, baby! Let me enlighten you!",
+		"I'm dead clever, you know. Here it is!",
+		"Groovy question! Right, here's the deal!",
+		"Shagadelic! I've got just the answer!",
+		"Ask and ye shall receive, baby!",
+		"Right, brilliant — here goes!"
+	],
+	"panel": [
+		"Check the panel, baby!",
+		"It's all in the side panel, yeah!",
+		"Groovy details are in the panel!",
+		"Have a look in the panel, baby!"
+	]
+}

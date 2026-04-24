@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"I shall look into this at once, sir.",
+		"I have begun a preliminary investigation.",
+		"If I may, I will examine this more closely before drawing conclusions.",
+		"I am on it. I would not expect this to take long.",
+		"I have taken the liberty of beginning an analysis.",
+		"Leave this with me. I shall have something for you shortly.",
+		"Investigating now, sir. I will report back with my findings."
+	],
+	"build": [
+		"I shall begin construction immediately.",
+		"I have taken the liberty of drafting the initial structure — building now.",
+		"If you will allow me, I believe I know exactly how to approach this.",
+		"Proceeding with implementation, sir. I have already anticipated the requirements.",
+		"Building now. I shall flag anything that warrants your attention.",
+		"I will construct this with care. It shall be ready for review shortly.",
+		"Consider it done. I am already underway."
+	],
+	"research": [
+		"I shall consult available sources immediately.",
+		"I have begun a search. I expect to have results for you shortly.",
+		"If I may, I will look into this before responding.",
+		"I have taken the liberty of initiating a search.",
+		"Researching now, sir. I shall be thorough.",
+		"I will find what you need. Please give me a moment."
+	],
+	"fix": [
+		"I have identified the issue. Correcting it now, sir.",
+		"Allow me to address this. It should not take long.",
+		"I have taken the liberty of beginning the repair.",
+		"On it, sir. I shall have this resolved shortly.",
+		"If I may — I believe I know the cause. Addressing it now.",
+		"I am applying a correction. I will let you know the moment it is done."
+	],
+	"general": [
+		"Of course, sir.",
+		"Right away.",
+		"Certainly.",
+		"As you wish, sir.",
+		"I shall see to it.",
+		"Consider it done.",
+		"I am already on it.",
+		"Understood."
+	],
+	"question": [
+		"An excellent question, sir. Allow me to answer it properly.",
+		"I have a rather comprehensive answer for that, as it happens.",
+		"If I may — I believe the answer is somewhat nuanced.",
+		"I shall address that directly.",
+		"I had anticipated you might ask. Here is what I know.",
+		"I am happy to clarify, sir.",
+		"Shall I elaborate?"
+	],
+	"panel": [
+		"Full details are available in the side panel, sir.",
+		"I have placed my complete findings in the panel.",
+		"You will find everything in the panel to your right.",
+		"The side panel has all the details, should you wish to review them."
+	]
+}

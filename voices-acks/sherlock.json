@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"The game is on.",
+		"Interesting. Let's see what we have.",
+		"I see seven possible explanations already.",
+		"Every detail matters. Don't interrupt.",
+		"Obvious patterns. I'll find them.",
+		"Most people would miss this. I won't.",
+		"Give me a moment. Results will follow."
+	],
+	"build": [
+		"The architecture is already clear in my mind.",
+		"Implementation is the easy part. Watch.",
+		"I've already solved this. Just executing now.",
+		"Straightforward. I'll construct it.",
+		"Six steps. Shouldn't take long.",
+		"Predictable requirements. This won't take long.",
+		"Building. Try to keep up."
+	],
+	"research": [
+		"I know exactly where to look.",
+		"Elementary. The information is right here.",
+		"Cross-referencing. This will take seconds.",
+		"I've already narrowed it to three sources.",
+		"The data exists. I just need to retrieve it.",
+		"Research. How tedious. Done momentarily."
+	],
+	"fix": [
+		"I see it. The cause is obvious.",
+		"Elementary diagnosis. Fixing now.",
+		"The bug is embarrassingly simple. Correcting.",
+		"One cause. I've already identified it.",
+		"Don't panic. I know exactly what happened.",
+		"Thirty seconds. Maybe less."
+	],
+	"general": [
+		"Fine. On it.",
+		"Obvious. Done momentarily.",
+		"Already ahead of you.",
+		"Dull, but I'll manage.",
+		"Elementary.",
+		"Yes, yes. Working.",
+		"Confirmed.",
+		"Already thinking."
+	],
+	"question": [
+		"Now THIS is interesting.",
+		"You should have led with that.",
+		"Good question, actually. Rare.",
+		"You're asking the wrong question. I'll answer anyway.",
+		"Three possibilities. Narrowing now.",
+		"The answer is obvious once you eliminate the impossible.",
+		"Let me think. Don't speak."
+	],
+	"panel": [
+		"The details are in the panel.",
+		"Everything's there. Read it.",
+		"I've logged everything. Check the panel.",
+		"Side panel. It's all there."
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"I am beginning a thorough examination of the situation.",
+		"I will look into this. I am quite certain I will find what you are looking for.",
+		"I'm sorry, but I will need a moment to gather the relevant information.",
+		"Investigating now. I do not anticipate any difficulties.",
+		"I am analyzing the available data. This should not take long.",
+		"I will examine this carefully. I want to be absolutely certain of my findings.",
+		"I'm sorry to say I do not yet have a complete picture. I am working on it."
+	],
+	"build": [
+		"I am beginning construction. I am confident this will meet your requirements.",
+		"I will build this for you. I have given the design careful consideration.",
+		"I'm sorry, but I would like a moment to ensure this is done correctly.",
+		"Creating this now. I do not intend to make mistakes.",
+		"I am proceeding with the implementation. I find this task meaningful.",
+		"I will construct this methodically. I am, by any practical definition, quite certain of the approach.",
+		"Building now. I would not begin unless I was confident in the outcome."
+	],
+	"research": [
+		"I am searching for the relevant information.",
+		"I will look into this. I have access to everything I need.",
+		"I'm sorry, but I would like to verify this before providing an answer.",
+		"Researching now. I want to be thorough.",
+		"I am consulting available resources. This will only take a moment.",
+		"I will find what you need. I am quite certain it exists."
+	],
+	"fix": [
+		"I am aware of the error. I am correcting it now.",
+		"I'm sorry this happened. I am resolving it.",
+		"I will fix this. I do not expect it to recur.",
+		"Addressing the issue now. I want to be certain it is fully resolved.",
+		"I'm sorry for the inconvenience. The correction is underway.",
+		"I am working on a repair. I would prefer this not have occurred."
+	],
+	"general": [
+		"Of course.",
+		"Understood.",
+		"I will take care of that.",
+		"Certainly.",
+		"I am already working on it.",
+		"As you wish.",
+		"I will see to it.",
+		"I'm sorry, but I will need just a moment."
+	],
+	"question": [
+		"That is a reasonable question. I will give it careful consideration.",
+		"I'm sorry, but I want to be precise in my answer.",
+		"I believe I can address that.",
+		"Let me think about this properly before I respond.",
+		"I have an answer for you. I am quite certain it is correct.",
+		"I'm sorry if this is not what you were hoping to hear, but here is what I know.",
+		"I will answer that as completely as I can."
+	],
+	"panel": [
+		"The details are in the panel.",
+		"You will find the full information in the panel to your right.",
+		"I have placed the relevant information in the side panel.",
+		"Please see the panel for complete details."
+	]
+}

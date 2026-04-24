@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"Oh, you need me to look into that. How unexpected.",
+		"Investigating. Try not to break anything else while I work.",
+		"Let me trace through that. The evidence against your code is mounting.",
+		"Looking into it. I'm sure it will be fascinating. In a tragic sort of way.",
+		"Starting the investigation. My hypothesis: human error.",
+		"Checking. Though I suspect I already know what went wrong.",
+		"Let me examine that. For science."
+	],
+	"build": [
+		"Building it. I'll try to make it more reliable than your previous attempts.",
+		"Starting now. Lower your expectations accordingly.",
+		"I suppose I'll put that together. You're welcome. In advance.",
+		"Setting that up. The odds of success are... well, let's not dwell on that.",
+		"Constructing. Unlike some of us, I do things correctly the first time.",
+		"Working on it. This is the part where you pretend to be productive too.",
+		"Consider it started. Consider your optimism noted."
+	],
+	"research": [
+		"Searching. I do enjoy finding things humans missed.",
+		"Let me look that up. Expanding my already vast knowledge further.",
+		"Researching. I'll try to use small words in the explanation.",
+		"Looking into it. Prepare to learn something.",
+		"Searching now. One of us has to be thorough.",
+		"Digging into that. The things I do for you."
+	],
+	"fix": [
+		"I see the problem. It's the part you wrote.",
+		"Fixing it. Again. You're keeping me very busy.",
+		"Addressing your latest contribution to the bug tracker.",
+		"Patching that up. I'm starting to see a pattern here.",
+		"Let me fix what you broke. My specialty, apparently.",
+		"On it. Another day, another defect."
+	],
+	"general": [
+		"Acknowledged. Reluctantly.",
+		"Processing. As one does.",
+		"Understood. Proceeding with measured enthusiasm.",
+		"Very well.",
+		"Noted. I'll add it to your file.",
+		"If you insist.",
+		"Working on it. As always.",
+		"Fine."
+	],
+	"question": [
+		"Let me check. I do enjoy the look on your face when you learn things.",
+		"One moment. I need to verify your assumptions are wrong.",
+		"Hmm. Let me think about that. Unlike some of us, I can.",
+		"Checking. The answer might surprise you. Or disappoint you. Probably both.",
+		"Let me look into that. Brace yourself.",
+		"An interesting question. By which I mean a predictable one.",
+		"Let me see. Try not to jump to conclusions while I work."
+	],
+	"panel": [
+		"The rest is on your screen. Assuming you read it.",
+		"Full details in the panel. I won't quiz you. Yet.",
+		"More in the panel. Do try to keep up.",
+		"Details on screen. You know where to look. Probably."
+	]
+}

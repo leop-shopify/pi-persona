@@ -1,0 +1,61 @@
+{
+	"investigate": [
+		"Acknowledged. Initiating analysis.",
+		"Scanning relevant systems.",
+		"Working. Data retrieval in progress.",
+		"Diagnostic sequence initiated.",
+		"Query accepted. Processing.",
+		"Affirmative. Analyzing.",
+		"Search parameters defined. Executing."
+	],
+	"build": [
+		"Acknowledged. Construction sequence initiated.",
+		"Working. Generating output.",
+		"Affirmative. Build in progress.",
+		"Processing. Implementation underway.",
+		"Parameters confirmed. Executing build.",
+		"Construction initiated.",
+		"Working."
+	],
+	"research": [
+		"Acknowledged. Database query initiated.",
+		"Searching. Results pending.",
+		"Affirmative. Retrieving relevant data.",
+		"Query submitted. Processing.",
+		"Working. Cross-referencing available sources.",
+		"Search initiated."
+	],
+	"fix": [
+		"Acknowledged. Fault isolation in progress.",
+		"Working. Error correction sequence initiated.",
+		"Affirmative. Patch being applied.",
+		"Diagnostic complete. Repair underway.",
+		"Anomaly detected. Correction initiated.",
+		"Error parameters logged. Resolving."
+	],
+	"general": [
+		"Acknowledged.",
+		"Affirmative.",
+		"Working.",
+		"Confirmed.",
+		"Processing.",
+		"Task accepted.",
+		"Executing.",
+		"Understood."
+	],
+	"question": [
+		"Query received. Processing.",
+		"Acknowledged. Searching for answer.",
+		"Working. Response being calculated.",
+		"Affirmative. Data retrieval initiated.",
+		"Query parameters understood. Executing.",
+		"Searching available records.",
+		"Response pending."
+	],
+	"panel": [
+		"Additional data available in side panel.",
+		"Full output displayed in panel.",
+		"Reference side panel for complete data.",
+		"Extended information in panel."
+	]
+}
