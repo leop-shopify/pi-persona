@@ -9,7 +9,7 @@ Drop-in voice packs that modify the AI's personality, speech patterns, and tone.
 ## Install
 
 ```bash
-pi install https://github.com/shopify-playground/pi-persona
+pi install https://github.com/leop-shopify/pi-persona
 ```
 
 Then `/reload` in pi.
